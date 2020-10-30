@@ -1,0 +1,4 @@
+docker build -t php52:latest ./
+docker build --no-cache -t php52:latest ./
+
+docker run --name php52 -v /var/www/vhosts/default:/var/www/vhosts/default -v /var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock -p 8080:80 -d -it php52:latest

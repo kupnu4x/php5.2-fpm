@@ -1,0 +1,24 @@
+--- ext/openssl/xp_ssl.c.orig	2017-03-22 16:28:14.703020690 +0000
++++ ext/openssl/xp_ssl.c	2017-03-22 16:28:42.559020475 +0000
+@@ -332,10 +332,6 @@
+ 			sslsock->is_client = 1;
+ 			method = SSLv23_client_method();
+ 			break;
+-		case STREAM_CRYPTO_METHOD_SSLv2_CLIENT:
+-			sslsock->is_client = 1;
+-			method = SSLv2_client_method();
+-			break;
+ 		case STREAM_CRYPTO_METHOD_SSLv3_CLIENT:
+ 			sslsock->is_client = 1;
+ 			method = SSLv3_client_method();
+@@ -352,10 +348,6 @@
+ 			sslsock->is_client = 0;
+ 			method = SSLv3_server_method();
+ 			break;
+-		case STREAM_CRYPTO_METHOD_SSLv2_SERVER:
+-			sslsock->is_client = 0;
+-			method = SSLv2_server_method();
+-			break;
+ 		case STREAM_CRYPTO_METHOD_TLS_SERVER:
+ 			sslsock->is_client = 0;
+ 			method = TLSv1_server_method();
